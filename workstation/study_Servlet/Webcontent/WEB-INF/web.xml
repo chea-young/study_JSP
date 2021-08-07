@@ -18,4 +18,14 @@
   <url-pattern>/hw</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+  <servlet-name>sec01_exam</servlet-name>
+  <servlet-class>com.lchy.HelloWorld</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>sec01_exam</servlet-name>
+  <url-pattern>/s01e</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>

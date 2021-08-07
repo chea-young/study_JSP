@@ -15,6 +15,9 @@ JSP를 공부한 것을 정리하는 Repository
 - 동전 웹 애플리케이션 컴포넌트로 java thread를 이용하여 동작한다.
 - 클라이언트의 요청에 동적으로 작동하고, 응답은 html을 이용한다.
 - MVC 패턴에서 Controller로 이용된다.
+- 단점
+  - 어노테이션 매핑의 경우 프로그램 개발 완성후, 릴리즈 후 수정을 하고 싶다면 자바소스파일을 수정해야하고 계속해서 재컴파일이 필요하다.
+  - web.xml의 경우 매핑하는 방법이 낫긴 하지만, 각각 다르게 구현을 해야 한다.
 
 <img src='./img/servlet01.png'/>
 - GenericSevlet 추상 클래스는 Servlet과 ServletConfig 인터페이스를 구현한다.
@@ -52,6 +55,7 @@ location.href = '[URL]';
 #### 이외
 - UTF-8 : 한글, 영어 모두 지원해주는 인코딩 언어
 - javax.servlet 패키지에 예외가 발생 시, 프로젝트 -> build path -> libraries -> add external jars -> 톰캣폴더\lib\ -> jsp-api.jar, servlet-api.jar 추가
+- @WebServlet 어노테이션보다 web.xml에서 지정한 매핑코드가 우선순위보다 훨씬 높다.
 
 ### Installation
 - tomcat 다운
