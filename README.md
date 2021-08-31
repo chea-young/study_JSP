@@ -22,3 +22,10 @@ location.href = '[URL]';
 
 #### 이외
 - UTF-8 : 한글, 영어 모두 지원해주는 인코딩 언어
+
+### Installation
+- tomcat 다운
+- Eclipse 다운
+- Eclipse Dynamic web 만들기 클릭
+- 거기에 다운 받았던 tomcat 연결
+- [webapp] 폴더에 index.jsp 만들기 실행버튼 누르기 -> 'http://localhost:8080/'에 서버가 띄워짐.
