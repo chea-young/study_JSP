@@ -12,3 +12,13 @@ JSP를 공부한 것을 정리하는 Repository
 
 ## 개발
 - Eclipse 연결 후 Dynamic Webb 만들기를 클릭해서 프로젝트를 만들면 폴더와 파일들이 생긴다. 이 중에서도 WebContent 폴더안에 만드는 것들이 Webpage를 구성하게 된다.
+
+
+### 코드 설명
+```
+location.href = '[URL]';
+```
+- 바로 [URL]로 이동해라
+
+#### 이외
+- UTF-8 : 한글, 영어 모두 지원해주는 인코딩 언어
