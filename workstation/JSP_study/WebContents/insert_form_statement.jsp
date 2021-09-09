@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h2>사용자 입력값 DB 저장하기</h2>
-	<form action="insert01_process.jsp" method="post">
+	<form action="insert_statement.jsp" method="post">
 		<p>
 			아이디: <input type="text" name="id" />
 		</p>

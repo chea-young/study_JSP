@@ -43,6 +43,9 @@
 				connection.close();
 		}	
 	%>
+	
+	</br>
+	<a href="select_statement.jsp">회원 조회하기</a>
 
 </body>
 </html>
