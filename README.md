@@ -123,6 +123,8 @@ JSP를 공부한 것을 정리하는 Repository
 - 사용자가 폼 페이지에서 입력한 데이터 값이 서버로 전송되기 전에 특정 규칙에 맞게 입력되었는지 검증하는 것이다.
 - 유효성 검사를 위한 핸들러 함수
   - form 페이지에서 이벤트가 발생하였을 때, <submit>을 클릭한 경우의 유효성 검사를 위해 매핑하는 함수이다.
+- 사용법
+  - 프로젝트 선택 -> Configure -> Convert to Tern Project -> Browser, Chrome, JQuery 체크하기 -> Apply
 
 
 ### JSP와 서블릿의 차이점
