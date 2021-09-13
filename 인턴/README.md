@@ -9,7 +9,7 @@
 
 ### J2EE
 - 클라이언트/서버 환경이나 웹 환경의 서버 단에서 수행되는 프로그램을 자바로 구현할 때 사용하는 자바 기술
-<img src='./img/J2EE.png'></img>
+<img src='./img/J2EE.png' width='400px' height='300px'></img>
     - 웹 컨테이너는 서블릿과 JSP 지원
     - 서블릿: Server Applet의 약어로서 자바 기반으로 이루어진 웹 프로그래밍 언어로 서버 쪽에서 실행하는 프로그램
     - JSP: Java Server Pages의 약어로 웹 페이지를 동적으로 처리되도록 하는 기술 중 하나. 서블릿 프로그래므이 기능을 HTML 파일 내에 태그와 스크립트 형식으로 구현하는 기술
@@ -20,3 +20,33 @@
 - /logs: 로그가 남는다
 - /webapps: JSP 파일이나 웹 응용 프로그램 저장
 - /lib 톰캣에 관련된 라이브러리 설치
+
+### 서블릿
+- 모든 서블릿의 접근 지정자는 public
+- javax.servlet.http 패키지에서 제공하는 서블릿 클래스를 상속받아 구현
+    - 대부분 서블릿 프로그램에서는 서블릿 인터페이스를 구현한 GenericServlet 클래스나 HttpServlet 클래스를 상속받아 구현.
+- 수행은 서블릿 컨테이너에 의해서 처리되는데 서블릿이 요청될 때마다 스레드가 계속 생성되어 객체를 생성해서 수행
+- main 메소드를 가지지 않고 클라이언트가 어떤 방식으로 요청했느냐에 다라 그에 합당한 메소드가 호출되어 진행.
+    - 클라이언트 요청방식: Get, Post
+    - Get -> doGet
+    ```
+    <form method="get" action="servlet/Method">
+    <input type="submit" value="get 방식으로 호출하기" >
+    </form>
+    ```
+
+    - Post -> doPost
+    ```
+    <form method="post" action="servlet/Method">
+    <input type="submit" value="post 방식으로 호출하기" >
+    </form>
+
+    ```
+### 서블릿 프로그램 설명
+- HttpServletRequest: 객체에 의해서 요청이 처리.
+- HttpServletResponse: 객체에 의해서 처리 결과가 응답.
+- resp.setContentType: HttpServletResponse 클래스로 선언된 객체가 resp라면 setContentType 메소드를 호출하여 응답 방식을 결정하고 보여주고자 하는 코드셋을 지정해야 함.
+- PrintWriter: 출력 스트림인 PrintWriter 객체를 HttpServletResponse 클래스로부터 가져옴.
+
+### 서블릿 동작원리
+
