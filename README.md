@@ -8,6 +8,29 @@ JSP를 공부한 것을 정리하는 Repository
 - JSP 는 대표적인 동적 웹 프로젝트이다.
 - JSP의 스파게티 코드 문제때문에 JSP MVC를 사용하게 된다.(그리고 JSP MVC의 문제점을 해결하기 위해 Spring MVC 를 사용한다.)
 
+## 서블릿
+- JSP 표준이 나오기 전에 만들어진 표준으로 자바로 웹 어플리케이션을 개발할 수 있도록 하기 위해 만들어졌다.
+- 자바 클래스를 이용해서 웹 애플리케이션을 개발할 수 있다.
+- 반드시 매핑을 해야하다
+- 동전 웹 애플리케이션 컴포넌트로 java thread를 이용하여 동작한다.
+- 클라이언트의 요청에 동적으로 작동하고, 응답은 html을 이용한다.
+- MVC 패턴에서 Controller로 이용된다.
+
+<img src='./img/servlet01/png',/>
+- GenericSevlet 추상 클래스는 Servlet과 ServletConfig 인터페이스를 구현한다.
+- HttpServlet은 GenericServlet 추상클래스를 상속받는다.
+
+### 서블릿 프로젝트 만들기
+1. Dynamic Project 선택
+2. Project 이름 작성 후 tomcat 연결하기
+3. Web module의 파일 이름을 'WebContent'로 설정하기
+4. 'Generate web.xml deployment description' 선택하기
+
+#### web.xml에서 서블릿 매핑하기
+`<servlet-name>`: 임의의 이름을 만들어 준다.
+`<servlet-class>`: 매핑할 클래스 파일명을 패키지 명을 폼함하여 정확하게 입력한다.
+`<url-pattern>`: servlet-class의 클래스를 매핑할 임의의 이름을 입력한다. 주의할 점은 /로 시작해야 한다.
+
 ## JSP와 서블릿의 차이점
 - JSP(Java Server Page)은 확장자가 .jsp인 파일로 html 문서 안에 자바 언어를 삽입해 사용할 수 있도록 준다.
 - 서블릿은 확장자가 .java인 파일로 자바의 일반적인 클래스와 동일한 개념으로 웹을 다룰 수 있도록 해주는 "HttpServlet" 클래스를 상속받은 클래스를 의미한다.
