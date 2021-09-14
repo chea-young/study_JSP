@@ -51,6 +51,7 @@ location.href = '[URL]';
 
 #### 이외
 - UTF-8 : 한글, 영어 모두 지원해주는 인코딩 언어
+- javax.servlet 패키지에 예외가 발생 시, 프로젝트 -> build path -> libraries -> add external jars -> 톰캣폴더\lib\ -> jsp-api.jar, servlet-api.jar 추가
 
 ### Installation
 - tomcat 다운

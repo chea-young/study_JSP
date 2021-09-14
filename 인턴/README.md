@@ -21,14 +21,14 @@
 - 수행은 서블릿 컨테이너에 의해서 처리되는데 서블릿이 요청될 때마다 스레드가 계속 생성되어 객체를 생성해서 수행.
 - main 메소드를 가지지 않고 클라이언트가 어떤 방식으로 요청했느냐에 다라 그에 합당한 메소드가 호출되어 진행.
     - 클라이언트 요청방식: Get, Post
-    - Get -> doGet
+    - Get -> doGet: 폼을 출력하는 형태로 많이 쓰임.
     ```
     <form method="get" action="servlet/Method">
     <input type="submit" value="get 방식으로 호출하기" >
     </form>
     ```
 
-    - Post -> doPost
+    - Post -> doPost: 데이터를 가공이나 처리코드로 사용.
     ```
     <form method="post" action="servlet/Method">
     <input type="submit" value="post 방식으로 호출하기" >
