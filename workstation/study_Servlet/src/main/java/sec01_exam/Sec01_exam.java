@@ -1,21 +1,20 @@
-package toast.test;
+package sec01_exam;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class TestServlet
- */
-public class TestServlet extends HttpServlet {
+public class Sec01_exam extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public TestServlet() {
+    public Sec01_exam() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -24,15 +23,16 @@ public class TestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("Hello World");
+		System.out.println("doGet()");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println("Hello World");
+		System.out.println("doPost()");
 	}
 
 }
