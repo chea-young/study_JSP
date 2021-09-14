@@ -16,7 +16,7 @@ JSP를 공부한 것을 정리하는 Repository
 - 클라이언트의 요청에 동적으로 작동하고, 응답은 html을 이용한다.
 - MVC 패턴에서 Controller로 이용된다.
 
-<img src='./img/servlet01/png',/>
+<img src='./img/servlet01.png'/>
 - GenericSevlet 추상 클래스는 Servlet과 ServletConfig 인터페이스를 구현한다.
 - HttpServlet은 GenericServlet 추상클래스를 상속받는다.
 
