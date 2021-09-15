@@ -41,6 +41,7 @@
 - resp.setContentType: HttpServletResponse 클래스로 선언된 객체가 resp라면 setContentType 메소드를 호출하여 응답 방식을 결정하고 보여주고자 하는 코드셋을 지정해야 함.
 - PrintWriter: 출력 스트림인 PrintWriter 객체를 HttpServletResponse 클래스로부터 가져옴.
 - resp.setContentType("text/html;charset=euc-kr") : 페이지에 대해 한글을 출력할 경우 한글이 깨지지 않도록 하기 위해서 euc-kr로 코드셋을 지정해야 한다.
+</br>
 
 ### JSP
 - JSP가 서블릿으로 변환하는 요청은 단 한번뿐이기 때문에 처리 속도가 드리지 않는다.
@@ -99,3 +100,26 @@
 ### 쿠키에 저장된 정보를 서버로 읽어오기
 1. 쿠키 객체 얻어오기 - ` Cookie[] cookies = request.getCookies(); `
 2. 쿠키 객체에 설정된 속성값을 알아낸다.
+
+### 자바 빈
+- 재사용 가능한 객체로서 대부분 데이터를 저장하는 역할을 한다.
+- 클래스로 구성되어 구성요소 또한 필드와 메소드가 된다.
+- 데이터를 표현하는 것을 목적으로 하는 자바 클래스이다.
+- 자바 빈 프로퍼터
+    - 저장되어 있는 값을 의미한다.
+    - 자바 빈은 프로퍼티 형태로 값을 저장하고 읽어온다.
+    - 프로퍼티를 위한 메소드는 setXXX와 getXXX 형태로 정의해야 한다.
+
+### JDBC를 이용한 데이터베이스 조작
+1. JDBC 드라이버 로드
+```
+ import java.sql.*;
+ Class.forName("oracle.jdbc.driver.OracleDriver"); 
+```
+2. DB와 연결
+```
+Connection con = null;
+con=DriverManager.getConnection([url], [uid], [pwd]);  
+```
+3. SQL 문 실행
+4. DB와 연결을 끊는다.
