@@ -1,12 +1,6 @@
 # study_JSP
 JSP를 공부한 것을 정리하는 Repository
-
-## JSP(Java Server Pages)
-- HTML 코드에 JAVA 코드를 넣어 동적 웹페이지를 생성하는 웹 애플리케이션 도구이다.
-- JSP 실행 시 JAVA Servlet으로 변환되며 웹 애플리케이션 섭에서 동작되면서 필요한 기능을 수행하고 그렇게 생성된 데이터를 웹페이지와 함께 클라이언트로 응답한다.
-  - JAVA Servlet: 웹 페이지를 동적으로 생성하기 위해 서버 측 프로그램이다.
-- JSP 는 대표적인 동적 웹 프로젝트이다.
-- JSP의 스파게티 코드 문제때문에 JSP MVC를 사용하게 된다.(그리고 JSP MVC의 문제점을 해결하기 위해 Spring MVC 를 사용한다.)
+- 서블릿과 JSP를 공부하면서 서블릿, JSP 그리고 Spring과의 차이점을 정리.
 
 ## 서블릿
 - JSP 표준이 나오기 전에 만들어진 표준으로 자바로 웹 어플리케이션을 개발할 수 있도록 하기 위해 만들어졌다.
@@ -18,6 +12,9 @@ JSP를 공부한 것을 정리하는 Repository
 - 단점
   - 어노테이션 매핑의 경우 프로그램 개발 완성후, 릴리즈 후 수정을 하고 싶다면 자바소스파일을 수정해야하고 계속해서 재컴파일이 필요하다.
   - web.xml의 경우 매핑하는 방법이 낫긴 하지만, 각각 다르게 구현을 해야 한다.
+  - 웹 프로그램의 화면 기능이 복잡하기 때문에 서브릿의 자바 기반으로 화면 기능 구현 시 어려움이 발생한다.
+  - 화면 구현 시 자바 코드로 인해 디자인 작업이 어려워 진다.
+  - 서블릿에 비즈니스 로직이 같이 있어 개발 후 유지관리가 불편한다.
 
 <img src='./img/servlet01.png'/>
 - GenericSevlet 추상 클래스는 Servlet과 ServletConfig 인터페이스를 구현한다.
@@ -34,6 +31,31 @@ JSP를 공부한 것을 정리하는 Repository
 `<servlet-class>`: 매핑할 클래스 파일명을 패키지 명을 폼함하여 정확하게 입력한다.
 `<url-pattern>`: servlet-class의 클래스를 매핑할 임의의 이름을 입력한다. 주의할 점은 /로 시작해야 한다.
 
+## JSP(Java Server Pages)
+- HTML 코드에 JAVA 코드를 넣어 동적 웹페이지를 생성하는 웹 애플리케이션 도구이다.
+- JSP 실행 시 JAVA Servlet으로 변환되며 웹 애플리케이션 섭에서 동작되면서 필요한 기능을 수행하고 그렇게 생성된 데이터를 웹페이지와 함께 클라이언트로 응답한다.
+  - JAVA Servlet: 웹 페이지를 동적으로 생성하기 위해 서버 측 프로그램이다.
+- JSP 는 대표적인 동적 웹 프로젝트이다.
+- JSP의 스파게티 코드 문제때문에 JSP MVC를 사용하게 된다.(그리고 JSP MVC의 문제점을 해결하기 위해 Spring MVC 를 사용한다.)
+
+### JSP 내부객체
+- 개발자가 객체를 생성하지 않고 바로 사용할 수 있는 객체로 JSP 컨테이너로 의해 Servlet으로 변화될 떄 자동으로 객체가 생성된다.
+- 종류
+  - 입출력 객체
+  - 서블릿 객체
+  - 세션 객체
+  - 예외 객체
+
+### bean
+- JAVA언어의 데이터와 기능으로 이루어진 클래스이다.
+- JSP페이지를 만들고, 액션태그를 이용하여 빈을 사용하여 빈의 내부 데이터를 처리한다.
+- 목적: 디자인 부분과 비즈니스 로직부분을 분리하고, 복잡한 JSP코드들을 줄이고 프로그램의 재사용성을 증가시키기 위해서이다.
+- 빈 관련 액션태그
+  - 데이터를 업데이트하고 읽어오는 역할을 한다. (setProperty(), getProperty() -> id, class, scope)
+  - useBean을 이용해서 작성하면 자바에서 new 연산자로 객체를 생성하는 것과 동일한 개념이 되는 것이다.
+  - setProperty(): 값을 저장하는 것, perperty에 value 값들이 들어온다. (*일 경우 빈 객체의 속성 값을 기본값으로 지정되는 것이다.)
+  - getProperty(): 값을 불러오는 것이다.
+
 ## JSP와 서블릿의 차이점
 - JSP(Java Server Page)은 확장자가 .jsp인 파일로 html 문서 안에 자바 언어를 삽입해 사용할 수 있도록 준다.
 - 서블릿은 확장자가 .java인 파일로 자바의 일반적인 클래스와 동일한 개념으로 웹을 다룰 수 있도록 해주는 "HttpServlet" 클래스를 상속받은 클래스를 의미한다.
@@ -45,7 +67,6 @@ JSP를 공부한 것을 정리하는 Repository
 ## 개발
 - Eclipse 연결 후 Dynamic Web 만들기를 클릭해서 프로젝트를 만들면 폴더와 파일들이 생긴다. 이 중에서도 WebContent 폴더안에 만드는 것들이 Webpage를 구성하게 된다.
 
-
 ### 코드 설명
 ```
 location.href = '[URL]';
@@ -56,6 +77,7 @@ location.href = '[URL]';
 - UTF-8 : 한글, 영어 모두 지원해주는 인코딩 언어
 - javax.servlet 패키지에 예외가 발생 시, 프로젝트 -> build path -> libraries -> add external jars -> 톰캣폴더\lib\ -> jsp-api.jar, servlet-api.jar 추가
 - @WebServlet 어노테이션보다 web.xml에서 지정한 매핑코드가 우선순위보다 훨씬 높다.
+- source에 generate getters ans setters/generate constructor using Fields를 사용하면 코드를 안 작성해도 만들 수 있다.
 
 ### Installation
 - tomcat 다운
