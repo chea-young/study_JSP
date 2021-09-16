@@ -46,6 +46,16 @@ JSP를 공부한 것을 정리하는 Repository
   - 세션 객체
   - 예외 객체
 
+### bean
+- JAVA언어의 데이터와 기능으로 이루어진 클래스이다.
+- JSP페이지를 만들고, 액션태그를 이용하여 빈을 사용하여 빈의 내부 데이터를 처리한다.
+- 목적: 디자인 부분과 비즈니스 로직부분을 분리하고, 복잡한 JSP코드들을 줄이고 프로그램의 재사용성을 증가시키기 위해서이다.
+- 빈 관련 액션태그
+  - 데이터를 업데이트하고 읽어오는 역할을 한다. (setProperty(), getProperty() -> id, class, scope)
+  - useBean을 이용해서 작성하면 자바에서 new 연산자로 객체를 생성하는 것과 동일한 개념이 되는 것이다.
+  - setProperty(): 값을 저장하는 것, perperty에 value 값들이 들어온다. (*일 경우 빈 객체의 속성 값을 기본값으로 지정되는 것이다.)
+  - getProperty(): 값을 불러오는 것이다.
+
 ## JSP와 서블릿의 차이점
 - JSP(Java Server Page)은 확장자가 .jsp인 파일로 html 문서 안에 자바 언어를 삽입해 사용할 수 있도록 준다.
 - 서블릿은 확장자가 .java인 파일로 자바의 일반적인 클래스와 동일한 개념으로 웹을 다룰 수 있도록 해주는 "HttpServlet" 클래스를 상속받은 클래스를 의미한다.
@@ -68,6 +78,7 @@ location.href = '[URL]';
 - UTF-8 : 한글, 영어 모두 지원해주는 인코딩 언어
 - javax.servlet 패키지에 예외가 발생 시, 프로젝트 -> build path -> libraries -> add external jars -> 톰캣폴더\lib\ -> jsp-api.jar, servlet-api.jar 추가
 - @WebServlet 어노테이션보다 web.xml에서 지정한 매핑코드가 우선순위보다 훨씬 높다.
+- source에 generate getters ans setters/generate constructor using Fields를 사용하면 코드를 안 작성해도 만들 수 있다.
 
 ### Installation
 - tomcat 다운
