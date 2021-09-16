@@ -123,3 +123,19 @@ con=DriverManager.getConnection([url], [uid], [pwd]);  
 ```
 3. SQL 문 실행
 4. DB와 연결을 끊는다.
+
+### DBCP 기법
+- DBCP: DBCP 매니저가 어느 정도 연결을 확보해 놓고 있다가 클라이언트의 요청이 들어오면 연결해 주고, 클라이언트 작업이 다 끝나면 연결을 다시 풀 매니저한테 반환하게 만드는 것이다.
+- DataSource를 통해 DBCP 사용
+    1. Initial Context 객체를 생성한다.
+    ```
+    InitialContext ctx=new InitialContext();
+    ```
+    2. 컨텍스트 객체의 lookup 함수로 DBCP에서 지정한 이름을 찾는데 존재한다면 DataSource가 받는다. 
+    ```
+    DataSource ds=(DataSource)ctx.lookup("java:comp/env/jdbc/oracle");
+    ```
+    3. DataSource 객체로 Connection 얻는다.
+    ```
+    con=ds.getConnection();                                          
+    ```
