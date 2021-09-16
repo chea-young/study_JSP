@@ -27,14 +27,14 @@
     <input type="submit" value="get 방식으로 호출하기" >
     </form>
     ```
-
+        - URL 경로 뒤, 물음표와 함께 파라미터를 붙여 전송하고 각각의 파라미터를 &로 구분.
     - Post -> doPost: 데이터를 가공이나 처리코드로 사용.
     ```
     <form method="post" action="servlet/Method">
     <input type="submit" value="post 방식으로 호출하기" >
     </form>
-
     ```
+        - header를 이용해 정보가 전송되어 보안에 강함.
 ### 서블릿 프로그램 설명
 - HttpServletRequest: 객체에 의해서 요청이 처리.
 - HttpServletResponse: 객체에 의해서 처리 결과가 응답.
