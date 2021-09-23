@@ -91,6 +91,21 @@ JSP를 공부한 것을 정리하는 Repository
 
 ### DBCP(커넥션 풀)
 
+### JSP 파일 업로드
+- MultipartRequest
+  - 웹 페이지에서 서버로 업로드 되는 파일 자체만 다루는 클래스이다.
+  - 웹 브라우저가 전송한 multipart/form-data 유형과 POST 방식의 요청 파라미터 등을 분석한 후 일반 데이터와 파일 데이터를 구분하여 파일 데이터에 접근한다.
+  - 오픈 라이브러리 cos.jar를 배포 사이트에서 직접 다운로드해서 사용한다.
+  ```
+  MutipartRequest multi = new MultipartRequest(request,
+    "C:\\upload", 5*1024*1024, "utf-8",
+    new DefaultFileRenamePolicy())
+  ```
+- Commons-FileUpload
+  - 파일 업로드 패키지이다.
+  - 서버의 메모리상에서 파일 처리가 가능하도록 지원한다.
+  - 오픈 라이브러리 commons-fileupload.jar, commons-io.jar 파일을 배포 사이트에서 직접 다운로드해서 사용한다.
+
 ### JSP와 서블릿의 차이점
 - JSP(Java Server Page)은 확장자가 .jsp인 파일로 html 문서 안에 자바 언어를 삽입해 사용할 수 있도록 준다.
 - 서블릿은 확장자가 .java인 파일로 자바의 일반적인 클래스와 동일한 개념으로 웹을 다룰 수 있도록 해주는 "HttpServlet" 클래스를 상속받은 클래스를 의미한다.
