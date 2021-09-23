@@ -25,4 +25,19 @@
     <!--
     <Manager pathname="" />
     -->
+    
+    <Resource
+    	name = "jdbc/dbconn" 
+    	auth = "Container"
+    	driverClassName = "com.mysql.jdbc.Driver"
+    	url = "jdbc:mysql://localhost:3306/testdb"
+    	username= 'root'
+    	password = '1234'
+    	type = "javax.sql.DataSource"
+    	maxActive = "50"
+    	maxIdle =  "10"
+    	maxWait = "5000"
+    
+    
+    />
 </Context>
