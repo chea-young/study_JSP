@@ -105,6 +105,7 @@ location.href = '[URL]';
 - javax.servlet 패키지에 예외가 발생 시, 프로젝트 -> build path -> libraries -> add external jars -> 톰캣폴더\lib\ -> jsp-api.jar, servlet-api.jar 추가
 - @WebServlet 어노테이션보다 web.xml에서 지정한 매핑코드가 우선순위보다 훨씬 높다.
 - source에 generate getters ans setters/generate constructor using Fields를 사용하면 코드를 안 작성해도 만들 수 있다.
+- `response.setIntHeader("Refresh", 5);` : 웹 사이트의 리프레쉬.
 
 ### Installation
 - tomcat 다운
