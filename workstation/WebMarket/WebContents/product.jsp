@@ -41,13 +41,13 @@ request.setCharacterEncoding("UTF-8");
 					<b> 상품 코드: </b> <span class="badge badge-danger"><%=product.getProductId()%></span>
 				</p>
 				<p>
-					<b> 제조사: </b> <span class="badge badge-danger"><%=product.getManufacturer()%></span>
+					<b> 제조사: </b> <span class="badge badge-primary"><%=product.getManufacturer()%></span>
 				</p>
 				<p>
-					<b> 분류: </b> <span class="badge badge-danger"><%=product.getCategory()%></span>
+					<b> 분류: </b> <span class="badge badge-secondary"><%=product.getCategory()%></span>
 				</p>
 				<p>
-					<b> 재고 수: </b> <span class="badge badge-danger"><%=product.getUnitsInStock()%></span>
+					<b> 재고 수: </b> <span class="badge badge-success"><%=product.getUnitsInStock()%></span>
 				</p>
 				<h4><%=product.getUnitPrice()%>
 					원
