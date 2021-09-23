@@ -17,6 +17,7 @@ JSP를 공부한 것을 정리하는 Repository
   - 서블릿에 비즈니스 로직이 같이 있어 개발 후 유지관리가 불편한다.
 
 <img src='./img/servlet01.png'/>
+
 - GenericSevlet 추상 클래스는 Servlet과 ServletConfig 인터페이스를 구현한다.
 - HttpServlet은 GenericServlet 추상클래스를 상속받는다.
 
@@ -37,6 +38,11 @@ JSP를 공부한 것을 정리하는 Repository
   - JAVA Servlet: 웹 페이지를 동적으로 생성하기 위해 서버 측 프로그램이다.
 - JSP 는 대표적인 동적 웹 프로젝트이다.
 - JSP의 스파게티 코드 문제때문에 JSP MVC를 사용하게 된다.(그리고 JSP MVC의 문제점을 해결하기 위해 Spring MVC 를 사용한다.)
+- DAO(Data Access Object)
+  - DB에 직접 접근하여 DB와 관련되 닝ㄹ을 하는 객체이다.
+  - DB에 접속해서 데이터 추가, 삭제, 수정 등의 작업을 하는 클래스이다.
+- DTO(Data Transfer Object)
+  - DAO 가 DB에 접근하여 가져온 데이터를 난잡하게 가져오지 않고, 클래스로 만들어서 가져오는 객체이다.
 
 ### JSP 내부객체
 - 개발자가 객체를 생성하지 않고 바로 사용할 수 있는 객체로 JSP 컨테이너로 의해 Servlet으로 변화될 떄 자동으로 객체가 생성된다.
@@ -83,15 +89,17 @@ JSP를 공부한 것을 정리하는 Repository
   3. SQL문 실행
   4. 데이터베이스 연결 해제
 
-## JSP와 서블릿의 차이점
+### DBCP(커넥션 풀)
+
+### JSP와 서블릿의 차이점
 - JSP(Java Server Page)은 확장자가 .jsp인 파일로 html 문서 안에 자바 언어를 삽입해 사용할 수 있도록 준다.
 - 서블릿은 확장자가 .java인 파일로 자바의 일반적인 클래스와 동일한 개념으로 웹을 다룰 수 있도록 해주는 "HttpServlet" 클래스를 상속받은 클래스를 의미한다.
 - 서블릿의 HTML 코드 출력 문제를 해결하기 위해 JSP 사용한다.
 
-## JSP와 Spring의 차이점
+### JSP와 Spring의 차이점
 - JSP는 웹 페이지 영역에서 사용되고, Spring은 웹 서비스 전반적 환경을 구성한다.
 
-## 개발
+### 개발
 - Eclipse 연결 후 Dynamic Web 만들기를 클릭해서 프로젝트를 만들면 폴더와 파일들이 생긴다. 이 중에서도 WebContent 폴더안에 만드는 것들이 Webpage를 구성하게 된다.
 
 ### 코드 설명
