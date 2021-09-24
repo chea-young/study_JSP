@@ -39,7 +39,6 @@
 				fileItem.write(file);
 				out.println("파일 이름" + fileName + "<br/>");
 				out.println("파일 저장 경로" + file.getPath()+ "<br/>");
-				
 			}
 		}	
 	%>

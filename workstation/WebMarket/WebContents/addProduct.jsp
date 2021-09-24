@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 <meta charset="UTF-8">
 <title>상품 등록</title>
 </head>
@@ -20,8 +19,8 @@
 	<div class="container">
 		<!-- class="form-horizontal"은 폼요소들이 수평적으로 배치가 되도록 해준다. -->
 		<form name="newProduct" action="./processAddProduct.jsp"
-			class="form-horizontal" method="post">
-
+			class="form-horizontal" method="post" enctype="multipart/form-data">
+			
 			<div class="form-group row">
 				<!-- 화면크기가 768px이상일 때 col-sm-? 이 부분이 적용이 되고,div요소의 block특성에 의해서 100%너비를 가지면
 			수직으로 쌓이게 만들어준다. -->
@@ -88,6 +87,13 @@
 						type="radio" name="condition" value="Old">중고 제품 <input
 						type="radio" name="condition" value="Refurbished">재생 제품
 				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-sm-2"><b>이미지</b></label>
+				<div class="col-sm-5">
+					<input type="file" name="productImage" class="form-control">									
+				</div>				
 			</div>
 
 			<div class="form-group row">

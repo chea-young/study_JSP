@@ -10,8 +10,7 @@ request.setCharacterEncoding("UTF-8");
 %>
 <html>
 <head>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 <meta charset="UTF-8">
 <title>상품 상세 정보</title>
 </head>
@@ -31,6 +30,11 @@ request.setCharacterEncoding("UTF-8");
 
 	<div class="container">
 		<div class="row">
+			<!-- 이미지 추가 -->
+			<div class="col-md-5">
+				<img src="c:/upload/<%= product.getFilename() %>"
+					style="width: 100%" />
+			</div>
 			<div class="col-md-6">
 				<h3>
 					<%=product.getPname()%>
