@@ -119,6 +119,12 @@ JSP를 공부한 것을 정리하는 Repository
   4. commons-fileupload에서 commons-fileupload-x.x.jar 파일에 WebContent/WEB-INF/lib에 넣기
   5. commons-io-x.x.x.jar 파일에 WebContent/WEB-INF/lib에 넣기
 
+### 유효성 검사(Validation)
+- 사용자가 폼 페이지에서 입력한 데이터 값이 서버로 전송되기 전에 특정 규칙에 맞게 입력되었는지 검증하는 것이다.
+- 유효성 검사를 위한 핸들러 함수
+  - form 페이지에서 이벤트가 발생하였을 때, <submit>을 클릭한 경우의 유효성 검사를 위해 매핑하는 함수이다.
+
+
 ### JSP와 서블릿의 차이점
 - JSP(Java Server Page)은 확장자가 .jsp인 파일로 html 문서 안에 자바 언어를 삽입해 사용할 수 있도록 준다.
 - 서블릿은 확장자가 .java인 파일로 자바의 일반적인 클래스와 동일한 개념으로 웹을 다룰 수 있도록 해주는 "HttpServlet" 클래스를 상속받은 클래스를 의미한다.
