@@ -17,6 +17,7 @@ JSP를 공부한 것을 정리하는 Repository
   - 서블릿에 비즈니스 로직이 같이 있어 개발 후 유지관리가 불편한다.
 
 <img src='./img/servlet01.png'/>
+
 - GenericSevlet 추상 클래스는 Servlet과 ServletConfig 인터페이스를 구현한다.
 - HttpServlet은 GenericServlet 추상클래스를 상속받는다.
 
@@ -37,6 +38,11 @@ JSP를 공부한 것을 정리하는 Repository
   - JAVA Servlet: 웹 페이지를 동적으로 생성하기 위해 서버 측 프로그램이다.
 - JSP 는 대표적인 동적 웹 프로젝트이다.
 - JSP의 스파게티 코드 문제때문에 JSP MVC를 사용하게 된다.(그리고 JSP MVC의 문제점을 해결하기 위해 Spring MVC 를 사용한다.)
+- DAO(Data Access Object)
+  - DB에 직접 접근하여 DB와 관련되 닝ㄹ을 하는 객체이다.
+  - DB에 접속해서 데이터 추가, 삭제, 수정 등의 작업을 하는 클래스이다.
+- DTO(Data Transfer Object)
+  - DAO 가 DB에 접근하여 가져온 데이터를 난잡하게 가져오지 않고, 클래스로 만들어서 가져오는 객체이다.
 
 ### JSP 내부객체
 - 개발자가 객체를 생성하지 않고 바로 사용할 수 있는 객체로 JSP 컨테이너로 의해 Servlet으로 변화될 떄 자동으로 객체가 생성된다.
@@ -56,15 +62,72 @@ JSP를 공부한 것을 정리하는 Repository
   - setProperty(): 값을 저장하는 것, perperty에 value 값들이 들어온다. (*일 경우 빈 객체의 속성 값을 기본값으로 지정되는 것이다.)
   - getProperty(): 값을 불러오는 것이다.
 
-## JSP와 서블릿의 차이점
+### DBMS(DataBase Management System)
+- 데이터 베이스는 여러 사용자나 응용 프로그램이 공유하고 동시에 접근 가능한 '데이터 집합'이다.
+- DBMS는 데이터베이스를 관리 운영하는 소프트웨어이다.
+- 사용자나 응요 프로그램은 DBMS가 관리하는 데이터에 동시에 접속하여 데이터를 공유한다.
+- DBMS 분류
+  - 계층형 DBMS
+    - 각 계층이 트리 형태를 띠고 1:N 관계를 가진다.
+    - 한번 구축하면 구조를 변경하기 까다롭다.
+    - 접근 유연성이 부족하여 임의 검색 시 어렵다.
+  - 망형 DBMS
+    - 1:1, 1:N, N:M(다대다) 관계가 지원되어 효과적이고 빠른 데이터 추출이 가능하다.
+  - 관계형 DBMS
+    - 모든 데이터는 테이블에 저장된다.
+    - 테이블 간의 관계는 기본키와 외래키를 사용하여 맺는다.(부모-자식 관계)
+    - 다른 DBMS에 비해 업무 변화에 따라 순응할 수 있고 유지 보수 측면에서도 편리하다.
+    - 대용량 데이터를 체계적으로 관리할 수 있다.
+    - 시스템 자원을 많이 차지하여 시스템이 전반적으로 느려지는 단점이 있다.
+
+### JDBC
+- Java 프로그램에서 SQL문을 실행하여 데이터를 관리하기 위한 JAVA API이다.
+- 다양한 데이터 베이스에 대해 별도의 프로그램을 만들 필요 없이, 해당 데이터 베이스의 JDBC를 이용하면 하나의 프로그램으로 데이터 베이스를 관리할 수 있다.
+- JDBC를 사용한 DB 연동 순서
+  1. JDBC 드라이버 로드
+  2. 데이터베이스 연결
+  3. SQL문 실행
+  4. 데이터베이스 연결 해제
+
+### DBCP(커넥션 풀)
+
+### JSP 파일 업로드
+- MultipartRequest
+  - 웹 페이지에서 서버로 업로드 되는 파일 자체만 다루는 클래스이다.
+  - 웹 브라우저가 전송한 multipart/form-data 유형과 POST 방식의 요청 파라미터 등을 분석한 후 일반 데이터와 파일 데이터를 구분하여 파일 데이터에 접근한다.
+  - 오픈 라이브러리 cos.jar를 배포 사이트에서 직접 다운로드해서 사용한다.
+
+  ```
+  MutipartRequest multi = new MultipartRequest(request,
+    "C:\\upload", 5*1024*1024, "utf-8",
+    new DefaultFileRenamePolicy())
+  ```
+- Commons-FileUpload
+  - 파일 업로드 패키지이다.
+  - 서버의 메모리상에서 파일 처리가 가능하도록 지원한다.
+  - 오픈 라이브러리 commons-fileupload.jar, commons-io.jar 파일을 배포 사이트에서 직접 다운로드해서 사용한다.
+
+#### MutipartRequest
+  1. cos.zip 다운로드 하기 [http://www.servlets.com/cos/]
+  2. cos.zip 압축풀기
+  3. 프로젝트 WebContent/WEB-INF/lib에 cos.jar(cos 압축 푼 폴더에 lib에 존재)를 복사하기
+
+#### Commons-FileUpload
+  1. commons-fileupload 다운받기[https://commons.apache.org/proper/commons-fileupload/download_fileupload.cgi]
+  2. commons-io 다운받기 [https://commons.apache.org/proper/commons-io/download_io.cgi]\
+  3. 압축 풀기
+  4. commons-fileupload에서 commons-fileupload-x.x.jar 파일에 WebContent/WEB-INF/lib에 넣기
+  5. commons-io-x.x.x.jar 파일에 WebContent/WEB-INF/lib에 넣기
+
+### JSP와 서블릿의 차이점
 - JSP(Java Server Page)은 확장자가 .jsp인 파일로 html 문서 안에 자바 언어를 삽입해 사용할 수 있도록 준다.
 - 서블릿은 확장자가 .java인 파일로 자바의 일반적인 클래스와 동일한 개념으로 웹을 다룰 수 있도록 해주는 "HttpServlet" 클래스를 상속받은 클래스를 의미한다.
 - 서블릿의 HTML 코드 출력 문제를 해결하기 위해 JSP 사용한다.
 
-## JSP와 Spring의 차이점
+### JSP와 Spring의 차이점
 - JSP는 웹 페이지 영역에서 사용되고, Spring은 웹 서비스 전반적 환경을 구성한다.
 
-## 개발
+### 개발
 - Eclipse 연결 후 Dynamic Web 만들기를 클릭해서 프로젝트를 만들면 폴더와 파일들이 생긴다. 이 중에서도 WebContent 폴더안에 만드는 것들이 Webpage를 구성하게 된다.
 
 ### 코드 설명
@@ -78,6 +141,8 @@ location.href = '[URL]';
 - javax.servlet 패키지에 예외가 발생 시, 프로젝트 -> build path -> libraries -> add external jars -> 톰캣폴더\lib\ -> jsp-api.jar, servlet-api.jar 추가
 - @WebServlet 어노테이션보다 web.xml에서 지정한 매핑코드가 우선순위보다 훨씬 높다.
 - source에 generate getters ans setters/generate constructor using Fields를 사용하면 코드를 안 작성해도 만들 수 있다.
+- `response.setIntHeader("Refresh", 5);` : 웹 사이트의 리프레쉬.
+- enctype: 전송 타입을 설정한다. 파일 전송을 하기 위해서는 multipart/form-data로 설정해야 한다.
 
 ### Installation
 - tomcat 다운

@@ -25,6 +25,7 @@
 		<div class="text-center">
 			<h3><%= tagline %></h3>
 			<%
+				response.setIntHeader("Refresh", 5);
 				//접속시간을 표식하기 위한 자바 코드
 				Calendar calendar = Calendar.getInstance();
 				int hour = calendar.get(Calendar.HOUR_OF_DAY);
