@@ -96,6 +96,7 @@ JSP를 공부한 것을 정리하는 Repository
   - 웹 페이지에서 서버로 업로드 되는 파일 자체만 다루는 클래스이다.
   - 웹 브라우저가 전송한 multipart/form-data 유형과 POST 방식의 요청 파라미터 등을 분석한 후 일반 데이터와 파일 데이터를 구분하여 파일 데이터에 접근한다.
   - 오픈 라이브러리 cos.jar를 배포 사이트에서 직접 다운로드해서 사용한다.
+
   ```
   MutipartRequest multi = new MultipartRequest(request,
     "C:\\upload", 5*1024*1024, "utf-8",
@@ -105,6 +106,11 @@ JSP를 공부한 것을 정리하는 Repository
   - 파일 업로드 패키지이다.
   - 서버의 메모리상에서 파일 처리가 가능하도록 지원한다.
   - 오픈 라이브러리 commons-fileupload.jar, commons-io.jar 파일을 배포 사이트에서 직접 다운로드해서 사용한다.
+
+#### MutipartRequest
+  1. cos.zip 다운로드 하기 [http://www.servlets.com/cos/]
+  2. cos.zip 압축풀기
+  3. 프로젝트 WebContent/WEB-INF/lib에 cos.jar(cos 압축 푼 폴더에 lib에 존재)를 복사하기
 
 ### JSP와 서블릿의 차이점
 - JSP(Java Server Page)은 확장자가 .jsp인 파일로 html 문서 안에 자바 언어를 삽입해 사용할 수 있도록 준다.
@@ -129,6 +135,7 @@ location.href = '[URL]';
 - @WebServlet 어노테이션보다 web.xml에서 지정한 매핑코드가 우선순위보다 훨씬 높다.
 - source에 generate getters ans setters/generate constructor using Fields를 사용하면 코드를 안 작성해도 만들 수 있다.
 - `response.setIntHeader("Refresh", 5);` : 웹 사이트의 리프레쉬.
+- enctype: 전송 타입을 설정한다. 파일 전송을 하기 위해서는 multipart/form-data로 설정해야 한다.
 
 ### Installation
 - tomcat 다운
