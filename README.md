@@ -112,6 +112,13 @@ JSP를 공부한 것을 정리하는 Repository
   2. cos.zip 압축풀기
   3. 프로젝트 WebContent/WEB-INF/lib에 cos.jar(cos 압축 푼 폴더에 lib에 존재)를 복사하기
 
+#### Commons-FileUpload
+  1. commons-fileupload 다운받기[https://commons.apache.org/proper/commons-fileupload/download_fileupload.cgi]
+  2. commons-io 다운받기 [https://commons.apache.org/proper/commons-io/download_io.cgi]\
+  3. 압축 풀기
+  4. commons-fileupload에서 commons-fileupload-x.x.jar 파일에 WebContent/WEB-INF/lib에 넣기
+  5. commons-io-x.x.x.jar 파일에 WebContent/WEB-INF/lib에 넣기
+
 ### JSP와 서블릿의 차이점
 - JSP(Java Server Page)은 확장자가 .jsp인 파일로 html 문서 안에 자바 언어를 삽입해 사용할 수 있도록 준다.
 - 서블릿은 확장자가 .java인 파일로 자바의 일반적인 클래스와 동일한 개념으로 웹을 다룰 수 있도록 해주는 "HttpServlet" 클래스를 상속받은 클래스를 의미한다.
