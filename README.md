@@ -28,9 +28,9 @@ JSP를 공부한 것을 정리하는 Repository
 4. 'Generate web.xml deployment description' 선택하기
 
 #### web.xml에서 서블릿 매핑하기
-`<servlet-name>`: 임의의 이름을 만들어 준다.
-`<servlet-class>`: 매핑할 클래스 파일명을 패키지 명을 폼함하여 정확하게 입력한다.
-`<url-pattern>`: servlet-class의 클래스를 매핑할 임의의 이름을 입력한다. 주의할 점은 /로 시작해야 한다.
+- `<servlet-name>`:  임의의 이름을 만들어 준다.
+- `<servlet-class>`: 매핑할 클래스 파일명을 패키지 명을 폼함하여 정확하게 입력한다.
+- `<url-pattern>`: servlet-class의 클래스를 매핑할 임의의 이름을 입력한다. 주의할 점은 /로 시작해야 한다.
 
 ## JSP(Java Server Pages)
 - HTML 코드에 JAVA 코드를 넣어 동적 웹페이지를 생성하는 웹 애플리케이션 도구이다.
@@ -88,8 +88,6 @@ JSP를 공부한 것을 정리하는 Repository
   2. 데이터베이스 연결
   3. SQL문 실행
   4. 데이터베이스 연결 해제
-
-### DBCP(커넥션 풀)
 
 ### JSP 파일 업로드
 - MultipartRequest
