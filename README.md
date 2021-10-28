@@ -1,6 +1,5 @@
 # study_JSP
-JSP를 공부한 것을 정리하는 Repository
-- 서블릿과 JSP를 공부하면서 서블릿, JSP 그리고 Spring과의 차이점을 정리.
+JSP를 공부한 것을 정리하는 Repository로 서블릿과 JSP를 공부하면서 서블릿, JSP 그리고 Spring과의 차이점을 정리.
 
 ## 서블릿
 - JSP 표준이 나오기 전에 만들어진 표준으로 자바로 웹 어플리케이션을 개발할 수 있도록 하기 위해 만들어졌다.
